@@ -72,6 +72,9 @@ namespace Managers
 
     void GraphicsManager::draw(sf::RectangleShape& body)
     {
+        if(!isWindowOpen())
+            return;
+
         window->draw(body);
     }
 
