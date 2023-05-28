@@ -20,14 +20,15 @@ namespace Entities
         bool executable;
 
     public:
-        Entity();
+        Entity(sf::Vector2f position=sf::Vector2f(0.0f, 0.0f));
         virtual ~Entity();
 
         virtual void draw();
-        virtual void execute() = 0;
+        void execute(); // template method
+        virtual void move(float dt);
+        virtual void updateTimers(float dt);
 
         const ID::EntityID getID() const;
-        
         const sf::Vector2f getPosition() const;
         const sf::Vector2f getVelocity() const;
         const sf::Vector2f getAcceleration() const;

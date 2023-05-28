@@ -4,9 +4,9 @@
 namespace Entities {
     Managers::GraphicsManager* Entity::graphics = Managers::GraphicsManager::getInstance();
 
-    Entity::Entity()
+    Entity::Entity(sf::Vector2f position)
     {
-
+        this->position = position;
     }
 
     
@@ -15,9 +15,33 @@ namespace Entities {
 
     }
 
+
     void Entity::draw()
     {
         graphics->draw(sprite);
+    }
+
+
+    void Entity::execute()
+    {
+        if(!executable)
+            return;
+
+        float dt = graphics->getDeltaTime();
+        updateTimers(dt);
+        move(dt);
+    }
+
+
+    void Entity::move(float dt)
+    {
+
+    }
+
+
+    void Entity::updateTimers(float dt)
+    {
+
     }
 
 
