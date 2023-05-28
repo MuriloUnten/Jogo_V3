@@ -4,7 +4,8 @@
 Game::Game():
     graphics(Managers::GraphicsManager::getInstance()),
     events(Managers::EventsManager::getInstance()),
-    inputs(Managers::InputManager::getInstance())
+    inputs(Managers::InputManager::getInstance()),
+    stateMachine(Managers::StateMachine::getInstance())
 {
 
 
@@ -16,6 +17,9 @@ Game::Game():
 Game::~Game()
 {
     graphics->deleteInstance();
+    events->deleteInstance();
+    inputs->deleteInstance();
+    stateMachine->deleteInstance();
 }
 
 

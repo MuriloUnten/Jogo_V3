@@ -3,12 +3,12 @@
 
 namespace Managers
 {
-    GraphicsManager* GraphicsManager::instance = NULL;
+    GraphicsManager* GraphicsManager::instance = nullptr;
     float GraphicsManager::deltaTime = 0;
 
     GraphicsManager* GraphicsManager::getInstance()
     {
-        if (instance == NULL)
+        if (instance == nullptr)
         {
             instance = new GraphicsManager();
         }
@@ -26,15 +26,15 @@ namespace Managers
     GraphicsManager::GraphicsManager() :
         window(new sf::RenderWindow(sf::VideoMode(WIDTH, HEIGHT), "Change my name."))
     {
-        window->setFramerateLimit(60);
+        window->setFramerateLimit(144);
     }
 
 
     GraphicsManager::~GraphicsManager()
     {
         delete window;
-        window = NULL;
-        instance = NULL;
+        window = nullptr;
+        instance = nullptr;
     }
 
 

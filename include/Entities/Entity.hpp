@@ -13,6 +13,7 @@ namespace Entities
         ID::EntityID id;
 
         sf::Vector2f vel;
+        sf::Vector2f acc;
 
         bool executable;
 

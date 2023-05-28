@@ -2,7 +2,7 @@
 
 namespace Managers
 {
-    EventsManager* EventsManager::instance = NULL;
+    EventsManager* EventsManager::instance = nullptr;
 
     EventsManager::EventsManager()
     {
@@ -13,15 +13,15 @@ namespace Managers
 
     EventsManager::~EventsManager()
     {
-        pGraphics = NULL;
+        pGraphics = nullptr;
         pInput->deleteInstance();
-        pInput = NULL;
+        pInput = nullptr;
     }
 
 
     EventsManager* EventsManager::getInstance()
     {
-        if(instance == NULL)
+        if(instance == nullptr)
             instance = new EventsManager();
 
         return instance;

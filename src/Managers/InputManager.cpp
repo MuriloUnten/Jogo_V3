@@ -4,7 +4,7 @@
 
 namespace Managers
 {
-    InputManager* InputManager::instance = NULL;
+    InputManager* InputManager::instance = nullptr;
 
     InputManager::InputManager()
     {
@@ -79,7 +79,7 @@ namespace Managers
 
     InputManager* InputManager::getInstance()
     {
-        if(instance == NULL)
+        if(instance == nullptr)
             instance = new InputManager();
         
         return instance;
@@ -114,7 +114,7 @@ namespace Managers
 
     void InputManager::attach(Observer* newObserver)
     {
-        if(newObserver != NULL)
+        if(newObserver != nullptr)
             observers.push_back(newObserver);
     }
 
