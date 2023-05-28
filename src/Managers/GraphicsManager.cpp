@@ -1,6 +1,5 @@
 #include "../../include/Managers/GraphicsManager.hpp"
 
-#define FONT_PATH "../assets/Fonts/ethn.otf"
 
 namespace Managers
 {
@@ -25,14 +24,9 @@ namespace Managers
     
     
     GraphicsManager::GraphicsManager() :
-        window(new sf::RenderWindow(sf::VideoMode(WIDTH, HEIGHT), "JOGO")),
-        font(new sf::Font())
+        window(new sf::RenderWindow(sf::VideoMode(WIDTH, HEIGHT), "Change my name."))
     {
-        if (!font->loadFromFile(FONT_PATH))
-        {
-            std::cout << "Error loading Font!" << std::endl;
-            exit(1);
-        }
+        window->setFramerateLimit(60);
     }
 
 
@@ -70,6 +64,17 @@ namespace Managers
             window->display();
     }
 
+    void GraphicsManager::draw(sf::Sprite& body)
+    {
+        window->draw(body);
+    }
+    
+
+    void GraphicsManager::draw(sf::RectangleShape& body)
+    {
+        window->draw(body);
+    }
+
 
     sf::RenderWindow* GraphicsManager::getWindow()
     {
@@ -91,12 +96,4 @@ namespace Managers
         return deltaTime;
     }
 
-
-    /* Returns a font pointer to be used by texts. */
-    sf::Font* GraphicsManager::getFont() const
-    {
-        return font;
-    }
-
 }// namespace Managers
-
