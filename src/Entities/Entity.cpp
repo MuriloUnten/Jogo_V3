@@ -80,6 +80,12 @@ namespace Entities {
     }
 
 
+    const int Entity::getDamage() const
+    {
+        return damage;
+    }
+
+
     const bool Entity::isExecutable() const
     {
         return executable;

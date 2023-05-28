@@ -17,6 +17,7 @@ namespace Entities
         sf::Vector2f velocity;
         sf::Vector2f acceleration;
 
+        int damage;
         bool executable;
 
     public:
@@ -36,6 +37,7 @@ namespace Entities
         void updatePosition(float dt);
         void updateVelocity(float dt);
 
+        const int getDamage() const;
         const bool isExecutable() const;
     };
 }// namespace Entities

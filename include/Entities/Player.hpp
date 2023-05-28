@@ -1,14 +1,15 @@
 #pragma once
 
 #define PLAYER_ATTACK_COOLDOWN 1
+#define PLAYER_SIZE sf::Vector2f(100, 100)
 
-#include "Entity.hpp"
+#include "Character.hpp"
 #include "../etc/PlayerControl.hpp"
 
 
 namespace Entities
 {
-    class Player : public Entity
+    class Player : public Character
     {
     private:
 

@@ -4,22 +4,13 @@
 namespace Entities
 {
     Player::Player(sf::Vector2f position):
-    Entity(position),
+    Character(position),
     controls(new PlayerControl(this))
     {
-        facingRight = true;
-        attackTimer->setLimit(PLAYER_ATTACK_COOLDOWN);
-        score = 0;
-    }
+        sprite.setOrigin(PLAYER_SIZE / 2.0f);
 
-
-    Player::Player():
-    Entity(),
-    controls(new PlayerControl(this))
-    {
-        hp = 10;
         facingRight = true;
-        attackTimer->setLimit(PLAYER_ATTACK_COOLDOWN);
+        timers.createTimer("attackTimer", PLAYER_ATTACK_COOLDOWN);
         score = 0;
     }
 
@@ -34,7 +25,7 @@ namespace Entities
     {
         if(canJump)
         {
-            vel.y = -600;
+            velocity.y = -600;
             jumping = true;
             canJump = false;
         }

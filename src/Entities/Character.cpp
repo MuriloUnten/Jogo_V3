@@ -24,10 +24,24 @@ namespace Entities
         timers.updateTimers(dt);
     }
 
+
+    void Character::setFacingRight(const bool facingRight)
+    {
+        this->facingRight = facingRight;
+    }
+
+
+    const bool Character::isFacingRight() const
+    {
+        return facingRight;
+    }
+
+
     const int Character::getHp() const
     {
         return hp;
     }
+
 
     void Character::takeDamage(const int damageTaken)
     {
@@ -45,5 +59,4 @@ namespace Entities
     {
         canJump = jump;
     }
-
 }// namespace Entities

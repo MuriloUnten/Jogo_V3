@@ -13,6 +13,7 @@ namespace Entities
     
         int hp;
 
+        bool facingRight;
         bool walking;
         bool canAttack;
         bool attacking;
@@ -25,6 +26,9 @@ namespace Entities
         virtual ~Character();
 
         void updateTimers(float dt);
+
+        void setFacingRight(const bool facingRight);
+        const bool isFacingRight() const;
 
         void takeDamage(const int damageTaken=1);
         const int getHp() const;
