@@ -2,7 +2,7 @@
 
 Managers::GraphicsManager* graphics = Managers::GraphicsManager::getInstance();
 
-GraphicalObject::GraphicalObject(sf::Vector2f size)
+GraphicalObject::GraphicalObject(sf::Vector2f position, sf::Vector2f size)
 {
     sprite.setOrigin(size / 2.0f);
 }

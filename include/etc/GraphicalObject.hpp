@@ -11,8 +11,8 @@ private:
     sf::Sprite sprite;
 
 public:
-    GraphicalObject(sf::Vector2f position=sf::Vector2f(0.0f, 0.0f));
-    virtual ~GraphicalObject();
+    GraphicalObject(sf::Vector2f position=sf::Vector2f(0.0f, 0.0f), sf::Vector2f size=sf::Vector2f(0.0f, 0.0f));
+    ~GraphicalObject();
 
     virtual void draw();
     void setOrigin(sf::Vector2f size);

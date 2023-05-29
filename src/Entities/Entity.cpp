@@ -15,13 +15,13 @@ namespace Entities {
     
     Entity::~Entity()
     {
-
+        delete graphicalRepresentation;
     }
 
 
     void Entity::draw()
     {
-        graphicalRepresentation.draw();
+        graphicalRepresentation->draw();
     }
 
 
@@ -57,7 +57,7 @@ namespace Entities {
     void Entity::setPosition(sf::Vector2f newPosition)
     {
         position = newPosition;
-        graphicalRepresentation.setPosition(position);
+        graphicalRepresentation->setPosition(position);
     }
 
 
@@ -65,7 +65,7 @@ namespace Entities {
     {
         position.x = x;
         position.y = y;
-        graphicalRepresentation.setPosition(x, y);
+        graphicalRepresentation->setPosition(x, y);
     }
     
     const sf::Vector2f Entity::getPosition() const

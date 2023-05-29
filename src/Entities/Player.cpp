@@ -9,7 +9,7 @@ namespace Entities
     score(0),
     currentProjectile(0)
     {
-        sprite.setOrigin(PLAYER_SIZE / 2.0f);
+        graphicalRepresentation = new GraphicalObject(position, PLAYER_SIZE);
         timers.createTimer(STR_ATTACK_TIMER, PLAYER_ATTACK_COOLDOWN);
 
         for(int i = 0; i < N_PROJECTILES; i++)
@@ -80,7 +80,7 @@ namespace Entities
 
     void Player::draw()
     {
-        graphics->draw(sprite);
+        graphicalRepresentation->draw();
     }
 
 

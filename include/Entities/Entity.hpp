@@ -11,7 +11,7 @@ namespace Entities
     protected:
         static Managers::GraphicsManager* graphics;
 
-        GraphicalObject graphicalRepresentation;
+        GraphicalObject* graphicalRepresentation;
         ID::EntityID id;
 
         sf::Vector2f position;

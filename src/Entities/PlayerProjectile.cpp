@@ -7,7 +7,7 @@ namespace Entities
     Projectile(),
     player(player)
     {
-        sprite.setOrigin(PLAYER_PROJECTILE_SIZE / 2.0f);
+        graphicalRepresentation = new GraphicalObject(sf::Vector2f(0.0f, 0.0f), PLAYER_PROJECTILE_SIZE);
     }
 
 
