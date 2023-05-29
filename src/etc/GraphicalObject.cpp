@@ -1,6 +1,6 @@
 #include "../../include/etc/GraphicalObject.hpp"
 
-Managers::GraphicsManager* graphics = Managers::GraphicsManager::getInstance();
+Managers::GraphicsManager* GraphicalObject::graphics = Managers::GraphicsManager::getInstance();
 
 GraphicalObject::GraphicalObject(sf::Vector2f position, sf::Vector2f size)
 {
