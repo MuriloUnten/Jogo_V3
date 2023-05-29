@@ -9,7 +9,7 @@ namespace Entities {
     maxVelocity(0.0f, 0.0f),
     acceleration(0.0f , 0.0f)
     {
-        this->position = position;
+        setPosition(position);
     }
 
     
@@ -21,7 +21,7 @@ namespace Entities {
 
     void Entity::draw()
     {
-        graphics->draw(sprite);
+        graphicalRepresentation.draw();
     }
 
 
@@ -57,7 +57,7 @@ namespace Entities {
     void Entity::setPosition(sf::Vector2f newPosition)
     {
         position = newPosition;
-        sprite.setPosition(position);
+        graphicalRepresentation.setPosition(position);
     }
 
 
@@ -65,7 +65,7 @@ namespace Entities {
     {
         position.x = x;
         position.y = y;
-        sprite.setPosition(x, y);
+        graphicalRepresentation.setPosition(x, y);
     }
     
     const sf::Vector2f Entity::getPosition() const

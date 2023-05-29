@@ -2,6 +2,7 @@
 
 #include "../Managers/GraphicsManager.hpp"
 #include "../ID/EntityID.hpp"
+#include "../etc/GraphicalObject.hpp"
 
 namespace Entities
 {
@@ -10,7 +11,7 @@ namespace Entities
     protected:
         static Managers::GraphicsManager* graphics;
 
-        sf::Sprite sprite;
+        GraphicalObject graphicalRepresentation;
         ID::EntityID id;
 
         sf::Vector2f position;
