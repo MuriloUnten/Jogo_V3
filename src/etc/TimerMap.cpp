@@ -34,9 +34,9 @@ void TimerMap::updateTimers(float dt)
 {
     for(iterator = timers.begin(); iterator != timers.end(); iterator++)
     {
-        Timer* tmp = iterator->second;
-        if(tmp->isActive())
-            tmp->update(dt);
+        Timer* timer = iterator->second;
+        if(timer->isActive())
+            timer->update(dt);
     }
 }
 

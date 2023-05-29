@@ -6,7 +6,8 @@ namespace Entities
 {
     Character::Character(sf::Vector2f position):
     Entity(position),
-    timers()
+    timers(),
+    facingRight(true)
     {
         canJump = false;
         attacking = false;

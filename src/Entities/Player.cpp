@@ -5,19 +5,28 @@ namespace Entities
 {
     Player::Player(sf::Vector2f position):
     Character(position),
-    controls(new PlayerControl(this))
+    controls(new PlayerControl(this)),
+    score(0),
+    currentProjectile(0)
     {
         sprite.setOrigin(PLAYER_SIZE / 2.0f);
+        timers.createTimer(STR_ATTACK_TIMER, PLAYER_ATTACK_COOLDOWN);
 
-        facingRight = true;
-        timers.createTimer("attackTimer", PLAYER_ATTACK_COOLDOWN);
-        score = 0;
+        for(int i = 0; i < N_PROJECTILES; i++)
+        {
+            projectiles[i] = new PlayerProjectile(this);
+        }
     }
 
 
     Player::~Player()
     {
         delete controls;
+
+        for(int i = 0; i < N_PROJECTILES; i++)
+        {
+            delete projectiles[i];
+        }
     }
 
 
@@ -32,18 +41,23 @@ namespace Entities
     }
 
 
-    void Player::move(bool right)
-    {
-        walking = true;
-        setFacingRight(right);
-    }
-
-
     void Player::attack()
     {
         attacking = true;
     }
 
+
+    void Player::shoot()
+{
+    if(timers.isTimerActive(STR_ATTACK_TIMER))
+        return;
+
+    projectiles[currentProjectile]->shoot();
+    currentProjectile = (currentProjectile + 1) % N_PROJECTILES;
+    projectiles[currentProjectile]->setExecutable(false);
+
+    timers.activateTimer(STR_ATTACK_TIMER);
+}
 
     void Player::stopWalking(bool side)
     {

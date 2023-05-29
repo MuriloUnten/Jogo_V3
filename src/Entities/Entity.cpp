@@ -62,6 +62,18 @@ namespace Entities {
     }
 
 
+    void Entity::setAcceleration(sf::Vector2f newAcc)
+    {
+        acceleration = newAcc;
+    }
+
+
+    void Entity::setAcceleration(float x, float y)
+    {
+        acceleration = sf::Vector2f(x, y);
+    }
+
+
     const sf::Vector2f Entity::getAcceleration() const
     {
         return acceleration;
@@ -83,6 +95,12 @@ namespace Entities {
     const int Entity::getDamage() const
     {
         return damage;
+    }
+
+
+    void Entity::setExecutable(const bool condition)
+    {
+        executable = condition;
     }
 
 

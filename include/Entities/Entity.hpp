@@ -27,17 +27,21 @@ namespace Entities
         virtual void draw();
         void execute(); // template method
         virtual void move(float dt);
-        virtual void updateTimers(float dt);
+        virtual void updateTimers(float dt); // hook
 
         const ID::EntityID getID() const;
         const sf::Vector2f getPosition() const;
         const sf::Vector2f getVelocity() const;
+
+        void setAcceleration(sf::Vector2f newAcc);
+        void setAcceleration(float x, float y);
         const sf::Vector2f getAcceleration() const;
 
         void updatePosition(float dt);
         void updateVelocity(float dt);
 
         const int getDamage() const;
+        void setExecutable(const bool condition);
         const bool isExecutable() const;
     };
 }// namespace Entities

@@ -2,18 +2,28 @@
 
 #define PLAYER_ATTACK_COOLDOWN 1
 #define PLAYER_SIZE sf::Vector2f(100, 100)
+#define N_PROJECTILES 10
+#define PLAYER_ACCELERATION_X 200
+#define PLAYER_BREAK_COEFFICIENT 10
+
+#define STR_ATTACK_TIMER "attackTimer"
 
 #include "Character.hpp"
 #include "../etc/PlayerControl.hpp"
+#include "PlayerProjectile.hpp"
 
 
 namespace Entities
 {
+    class PlayerProjectile;
+
     class Player : public Character
     {
     private:
-
         PlayerControl* controls;
+
+        PlayerProjectile* projectiles[N_PROJECTILES];
+        int currentProjectile;
 
         int score;
 
