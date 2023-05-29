@@ -1,4 +1,5 @@
 #include "../include/Game.hpp"
+#include "../include/GameStates/Levels/Level.hpp"
 
 
 Game::Game():
@@ -7,9 +8,9 @@ Game::Game():
     inputs(Managers::InputManager::getInstance()),
     stateMachine(Managers::StateMachine::getInstance())
 {
+    stateMachine->addState(new GameStates::Level());
 
-
-
+    stateMachine->changeState(stateID::level);
     execute();
 }
 

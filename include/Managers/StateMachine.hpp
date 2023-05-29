@@ -12,7 +12,7 @@ namespace Managers
        StateMachine();
         static StateMachine* instance;
 
-        std::map<stateID, GameState*> statesMap;
+        std::map<stateID, GameStates::GameState*> statesMap;
         stateID currentStateID;
         stateID lastStateID;
 
@@ -21,10 +21,10 @@ namespace Managers
         static StateMachine* getInstance();
         static void deleteInstance();
 
-        void addState(GameState* state);
+        void addState(GameStates::GameState* state);
         void setState(stateID newStateID);
         void changeState(stateID newState);
-        void overwriteState(GameState* newState);
+        void overwriteState(GameStates::GameState* newState);
         void executeState();
         void drawState();
 

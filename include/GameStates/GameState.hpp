@@ -18,24 +18,27 @@ namespace Managers
     class StateMachine;
 }
 
-class GameState
+namespace GameStates
 {
-protected:
-    Managers::StateMachine* stateMachine;
-    stateID id;
-    bool active;
+    class GameState
+    {
+    protected:
+        static Managers::StateMachine* stateMachine;
+        stateID id;
+        bool active;
 
-public:
-    GameState();
-    virtual ~GameState();
+    public:
+        GameState();
+        virtual ~GameState();
 
-    virtual void execute() = 0;
-    virtual void draw() = 0;
-    virtual void resetState() = 0;
+        virtual void execute() = 0;
+        virtual void draw() = 0;
+        virtual void resetState() = 0;
 
-    void changeState(stateID id);
-    const stateID getID() const;
+        void changeState(stateID id);
+        const stateID getID() const;
 
-    const bool getActive() const;
-    void setActive(const bool isActive);
-};
+        const bool getActive() const;
+        void setActive(const bool isActive);
+    };
+}// namespace GameStates

@@ -14,7 +14,7 @@ namespace Managers
 
     StateMachine::~StateMachine()
     {
-        std::map<stateID, GameState*>::iterator it;
+        std::map<stateID, GameStates::GameState*>::iterator it;
 
         for (it = statesMap.begin(); it != statesMap.end(); ++it)
             delete (it->second);
@@ -37,10 +37,10 @@ namespace Managers
     }
 
 
-    void StateMachine::addState(GameState* state)
+    void StateMachine::addState(GameStates::GameState* state)
     {
         if(state != nullptr)
-            statesMap.insert(std::pair<stateID, GameState*>(state->getID(), state));
+            statesMap.insert(std::pair<stateID, GameStates::GameState*>(state->getID(), state));
     }
 
 
@@ -52,7 +52,7 @@ namespace Managers
     }
 
 
-    void StateMachine::overwriteState(GameState* newState)
+    void StateMachine::overwriteState(GameStates::GameState* newState)
     {
         statesMap[newState->getID()] = newState;
     }

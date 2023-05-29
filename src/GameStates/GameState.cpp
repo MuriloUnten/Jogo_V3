@@ -1,38 +1,42 @@
 #include "../../include/GameStates/GameState.hpp"
 #include "../../include/Managers/StateMachine.hpp"
 
-GameState::GameState():
-    stateMachine(Managers::StateMachine::getInstance())
+namespace GameStates
 {
-    active = false;
-}
+    Managers::StateMachine* GameState::stateMachine = Managers::StateMachine::getInstance();
+
+    GameState::GameState()
+    {
+        active = false;
+    }
 
 
-GameState::~GameState()
-{
+    GameState::~GameState()
+    {
 
-}
-
-
-void GameState::changeState(stateID id)
-{
-    stateMachine->changeState(id);
-}
+    }
 
 
-const stateID GameState::getID() const
-{
-    return id;
-}
+    void GameState::changeState(stateID id)
+    {
+        stateMachine->changeState(id);
+    }
 
 
-const bool GameState::getActive() const
-{
-    return active;
-}
+    const stateID GameState::getID() const
+    {
+        return id;
+    }
 
 
-void GameState::setActive(const bool isActive)
-{
-    active = isActive;
+    const bool GameState::getActive() const
+    {
+        return active;
+    }
+
+
+    void GameState::setActive(const bool isActive)
+    {
+        active = isActive;
+    }
 }
