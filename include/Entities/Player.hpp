@@ -12,6 +12,7 @@
 #include "Character.hpp"
 #include "../etc/PlayerControl.hpp"
 #include "PlayerProjectile.hpp"
+#include <array>
 
 
 namespace Entities
@@ -23,7 +24,7 @@ namespace Entities
     private:
         PlayerControl* controls;
 
-        PlayerProjectile* projectiles[N_PROJECTILES];
+        std::array<PlayerProjectile*, N_PROJECTILES>* projectiles;
         int currentProjectile;
 
         int score;
@@ -46,5 +47,6 @@ namespace Entities
         const int getScore() const;
 
         PlayerControl* getControls() const;
+        std::array<PlayerProjectile*, N_PROJECTILES>* getProjectiles() const;
     };
 }// namespace Entities

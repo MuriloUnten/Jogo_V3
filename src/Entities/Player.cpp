@@ -14,7 +14,7 @@ namespace Entities
 
         for(int i = 0; i < N_PROJECTILES; i++)
         {
-            projectiles[i] = new PlayerProjectile(this);
+            projectiles->operator[](i) = new PlayerProjectile(this);
         }
     }
 
@@ -25,7 +25,7 @@ namespace Entities
 
         for(int i = 0; i < N_PROJECTILES; i++)
         {
-            delete projectiles[i];
+            delete projectiles->operator[](i);
         }
     }
 
@@ -59,9 +59,10 @@ namespace Entities
     if(timers.isTimerActive(STR_ATTACK_TIMER))
         return;
 
-    projectiles[currentProjectile]->shoot();
+    projectiles->operator[](currentProjectile)->shoot();
+
     currentProjectile = (currentProjectile + 1) % N_PROJECTILES;
-    projectiles[currentProjectile]->setExecutable(false);
+    projectiles->operator[](currentProjectile)->setExecutable(false);
 
     timers.activateTimer(STR_ATTACK_TIMER);
 }
@@ -99,5 +100,11 @@ namespace Entities
     PlayerControl* Player::getControls() const
     {
         return controls;
+    }
+
+
+    std::array<PlayerProjectile*, N_PROJECTILES>* Player::getProjectiles() const
+    {
+        return projectiles;
     }
 }// namespace Entities
