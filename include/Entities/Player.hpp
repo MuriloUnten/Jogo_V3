@@ -32,11 +32,11 @@ namespace Entities
         Player();
         ~Player();
 
-        void changeVelocity();
+        void move(float dt);
 
         void jump();
-        void move(bool right);
         void attack();
+        void shoot();
         void stopWalking(bool side);
         void stopAttacking();
         void draw();

@@ -11,11 +11,12 @@ class PlayerControl : public Observer
 {
 private:
     Entities::Player* pPlayer;
+    std::map<std::string, bool> pressedKeys;
 
     std::string jump;
     std::string left;
     std::string right;
-    std::string attack;
+    std::string shoot;
 
 public:
     PlayerControl(Entities::Player* player);
@@ -24,7 +25,8 @@ public:
     void handleKeyPressed(std::string key);
     void handleKeyReleased(std::string key);
 
-    void setPlayer(Entities::Player* player);
+    void executePressedKeys();
 
-    void setKeys(std::string jump, std::string left, std::string right, std::string attack);
+    void setPlayer(Entities::Player* player);
+    void setKeys(std::string jump, std::string left, std::string right, std::string shoot);
 };

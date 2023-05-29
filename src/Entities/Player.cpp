@@ -30,6 +30,13 @@ namespace Entities
     }
 
 
+    void Player::move(float dt)
+    {
+        controls->executePressedKeys();
+        updateVelocity(dt);
+        updatePosition(dt);
+    }
+
     void Player::jump()
     {
         if(canJump)
