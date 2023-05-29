@@ -4,7 +4,10 @@
 namespace Entities {
     Managers::GraphicsManager* Entity::graphics = Managers::GraphicsManager::getInstance();
 
-    Entity::Entity(sf::Vector2f position)
+    Entity::Entity(sf::Vector2f position):
+    velocity(0.0f, 0.0f),
+    maxVelocity(0.0f, 0.0f),
+    acceleration(0.0f , 0.0f)
     {
         this->position = position;
     }
@@ -49,6 +52,21 @@ namespace Entities {
     {
         return id;
     }
+
+
+    void Entity::setPosition(sf::Vector2f newPosition)
+    {
+        position = newPosition;
+        sprite.setPosition(position);
+    }
+
+
+    void Entity::setPosition(float x, float y)
+    {
+        position.x = x;
+        position.y = y;
+        sprite.setPosition(x, y);
+    }
     
     const sf::Vector2f Entity::getPosition() const
     {
@@ -82,7 +100,7 @@ namespace Entities {
 
     void Entity::updatePosition(float dt)
     {
-        position += velocity * dt;
+        setPosition(position + velocity * dt);
     }
 
 

@@ -15,6 +15,7 @@ namespace Entities
 
         sf::Vector2f position;
         sf::Vector2f velocity;
+        sf::Vector2f maxVelocity;
         sf::Vector2f acceleration;
 
         int damage;
@@ -30,7 +31,11 @@ namespace Entities
         virtual void updateTimers(float dt); // hook
 
         const ID::EntityID getID() const;
+
+        void setPosition(sf::Vector2f newPosition);
+        void setPosition(float x, float y);
         const sf::Vector2f getPosition() const;
+
         const sf::Vector2f getVelocity() const;
 
         void setAcceleration(sf::Vector2f newAcc);
