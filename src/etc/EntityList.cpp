@@ -35,3 +35,9 @@ void EntityList::execute()
         (*iterator)->execute();
     }
 }
+
+
+void EntityList::pushEntity(Entities::Entity* entity)
+{
+    list.push_back(entity);
+}

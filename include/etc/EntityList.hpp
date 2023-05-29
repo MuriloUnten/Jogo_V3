@@ -15,4 +15,5 @@ public:
     void draw();
     void execute();
 
+    void pushEntity(Entities::Entity* entity);
 };
