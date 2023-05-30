@@ -59,23 +59,27 @@ void PlayerControl::executePressedKeys()
     {
         acc -= PLAYER_ACCELERATION_X;
         if(xVel > 0)
-            acc -= xVel * PLAYER_BREAK_COEFFICIENT;
+            acc -= xVel * 2 * PLAYER_BREAK_COEFFICIENT;
+
+        pPlayer->setFacingRight(false);
     }
     else if(pressedKeys["right"] && !pressedKeys["left"])
     {
         acc += PLAYER_ACCELERATION_X;
         if(xVel < 0)
-            acc += xVel * PLAYER_BREAK_COEFFICIENT;
+            acc += -xVel * 2 * PLAYER_BREAK_COEFFICIENT;
+
+        pPlayer->setFacingRight(true);
     }
     else
         acc = -xVel * PLAYER_BREAK_COEFFICIENT;
+
+    pPlayer->setAcceleration(acc, pPlayer->getAcceleration().y);
 
     if(pressedKeys["jump"])
         pPlayer->jump();
     if(pressedKeys["shoot"])
         pPlayer->shoot();
-
-    pPlayer->setAcceleration(acc, pPlayer->getAcceleration().y);
 }
 
 

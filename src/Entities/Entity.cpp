@@ -111,6 +111,14 @@ namespace Entities {
     void Entity::updateVelocity(float dt)
     {
         velocity += acceleration * dt;
+
+        if(velocity.x < -maxVelocity.x)
+            velocity.x = -maxVelocity.x;
+        else if(velocity.x > maxVelocity.x)
+            velocity.x = maxVelocity.x;
+
+        if(velocity.y > maxVelocity.y)
+            velocity.y = maxVelocity.y;
     }
 
 

@@ -8,6 +8,7 @@ namespace Entities
     player(player)
     {
         graphicalRepresentation = new GraphicalObject(sf::Vector2f(0.0f, 0.0f), PLAYER_PROJECTILE_SIZE);
+        maxVelocity.x = PLAYER_PROJECTILE_VELOCITY;
     }
 
 
@@ -26,8 +27,9 @@ namespace Entities
     void PlayerProjectile::shoot()
     {
         executable = true;
+        facingRight = player->isFacingRight();
         float vel = facingRight? PLAYER_PROJECTILE_VELOCITY : -PLAYER_PROJECTILE_VELOCITY;
         velocity = sf::Vector2f(vel, 0.0f);
-        position = sf::Vector2f(player->getPosition());
+        setPosition(player->getPosition());
     }
 }// namespace Entities

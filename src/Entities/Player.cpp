@@ -10,8 +10,12 @@ namespace Entities
     score(0),
     currentProjectile(0)
     {
+        controls->setKeys("W", "A", "D", "Space");
+
         graphicalRepresentation = new GraphicalObject(position, PLAYER_SIZE);
         setPosition(position);
+        maxVelocity = PLAYER_MAX_VELOCITY;
+
         timers.createTimer(STR_ATTACK_TIMER, PLAYER_ATTACK_COOLDOWN);
 
         for(int i = 0; i < N_PROJECTILES; i++)

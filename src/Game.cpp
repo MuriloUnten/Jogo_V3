@@ -28,6 +28,8 @@ void Game::execute()
 {
     while(graphics->isWindowOpen())
     {
+        graphics->updateDeltaTime();
+
         events->pollEvents();
 
         graphics->clear();
