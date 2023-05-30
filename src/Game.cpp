@@ -31,6 +31,9 @@ void Game::execute()
         events->pollEvents();
 
         graphics->clear();
+
+        stateMachine->executeState();
+
         graphics->display();
     }
 }

@@ -5,11 +5,11 @@ namespace Entities {
     Managers::GraphicsManager* Entity::graphics = Managers::GraphicsManager::getInstance();
 
     Entity::Entity(sf::Vector2f position):
-    velocity(0.0f, 0.0f),
-    maxVelocity(0.0f, 0.0f),
-    acceleration(0.0f , 0.0f)
+        velocity(0.0f, 0.0f),
+        maxVelocity(0.0f, 0.0f),
+        acceleration(0.0f , 0.0f)
     {
-        setPosition(position);
+    
     }
 
     

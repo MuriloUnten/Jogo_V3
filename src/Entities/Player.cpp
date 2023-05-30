@@ -6,10 +6,12 @@ namespace Entities
     Player::Player(sf::Vector2f position):
     Character(position),
     controls(new PlayerControl(this)),
+    projectiles(new std::array<PlayerProjectile*, N_PROJECTILES>),
     score(0),
     currentProjectile(0)
     {
         graphicalRepresentation = new GraphicalObject(position, PLAYER_SIZE);
+        setPosition(position);
         timers.createTimer(STR_ATTACK_TIMER, PLAYER_ATTACK_COOLDOWN);
 
         for(int i = 0; i < N_PROJECTILES; i++)

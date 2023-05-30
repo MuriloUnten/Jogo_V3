@@ -3,7 +3,8 @@
 
 namespace GameStates
 {
-    Level::Level()
+    Level::Level():
+    GameState()
     {
         id = level;
 
@@ -11,7 +12,7 @@ namespace GameStates
             Entities::Player* player = new Entities::Player(sf::Vector2f(0.0f, 0.0f));
             entities.pushEntity(player);
 
-            std::array<Entities::PlayerProjectile*, N_PROJECTILES>* projectiles;
+            std::array<Entities::PlayerProjectile*, N_PROJECTILES>* projectiles = player->getProjectiles();
             for(int i = 0; i < N_PROJECTILES; i++)
             {
                 entities.pushEntity(projectiles->operator[](i));
