@@ -7,7 +7,8 @@ namespace Entities {
     Entity::Entity(sf::Vector2f position):
         velocity(0.0f, 0.0f),
         maxVelocity(0.0f, 0.0f),
-        acceleration(0.0f , 0.0f)
+        acceleration(0.0f , 0.0f),
+        executable(true)
     {
     
     }
@@ -21,6 +22,9 @@ namespace Entities {
 
     void Entity::draw()
     {
+        if(!executable)
+            return;
+    
         graphicalRepresentation->draw();
     }
 

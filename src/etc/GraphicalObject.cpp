@@ -5,6 +5,9 @@ Managers::GraphicsManager* GraphicalObject::graphics = Managers::GraphicsManager
 GraphicalObject::GraphicalObject(sf::Vector2f position, sf::Vector2f size)
 {
     sprite.setOrigin(size / 2.0f);
+    sf::Texture* tmp = new sf::Texture();
+    tmp->loadFromFile("../assets/player.png");
+    sprite.setTexture(*tmp);
 }
 
 

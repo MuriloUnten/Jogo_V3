@@ -41,7 +41,6 @@ namespace Entities
         void shoot();
         void stopWalking(bool side);
         void stopAttacking();
-        void draw();
 
         void addScore(const int extraScore);
         const int getScore() const;

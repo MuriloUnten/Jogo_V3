@@ -9,7 +9,7 @@ namespace GameStates
         id = level;
 
         {// Temporary. TODO Remove 
-            Entities::Player* player = new Entities::Player(sf::Vector2f(0.0f, 0.0f));
+            Entities::Player* player = new Entities::Player(sf::Vector2f(200.0f, 200.0f));
             entities.pushEntity(player);
 
             std::array<Entities::PlayerProjectile*, N_PROJECTILES>* projectiles = player->getProjectiles();
@@ -36,6 +36,7 @@ namespace GameStates
     void Level::execute()
     {
         entities.execute();
+        draw();
     }
 
 

@@ -81,11 +81,6 @@ namespace Entities
         attacking = false;
     }
 
-    void Player::draw()
-    {
-        graphicalRepresentation->draw();
-    }
-
 
     void Player::addScore(const int extraScore)
     {

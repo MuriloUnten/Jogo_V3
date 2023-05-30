@@ -26,7 +26,7 @@ namespace Entities
         Entity(sf::Vector2f position=sf::Vector2f(0.0f, 0.0f));
         virtual ~Entity();
 
-        virtual void draw();
+        void draw();
         void execute(); // template method
         virtual void move(float dt);
         virtual void updateTimers(float dt); // hook
