@@ -66,6 +66,9 @@ namespace Managers
 
     void GraphicsManager::draw(sf::Sprite& body)
     {
+        if(!isWindowOpen())
+            return;
+    
         window->draw(body);
     }
     
@@ -82,6 +85,33 @@ namespace Managers
     sf::RenderWindow* GraphicsManager::getWindow()
     {
         return window;
+    }
+
+
+    sf::Texture* GraphicsManager::loadTexture(std::string path)
+    {
+    //     sf::Texture* texture = textures[path];
+    //     
+    //     if(texture)
+    //         return texture;
+
+    //     texture = new sf::Texture();
+    //     texture->loadFromFile(path);
+    //     textures[path] = texture;
+
+    //     return texture;
+        sf::Texture* texture;
+        try
+        {
+            texture = textures.at(path);
+        }
+        catch(std::out_of_range)
+        {
+            texture = new sf::Texture;
+            texture->loadFromFile(path);
+            textures.insert(std::pair<std::string, sf::Texture*>(path, texture));
+        }
+    return texture;
     }
 
 

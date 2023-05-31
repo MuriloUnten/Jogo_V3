@@ -1,11 +1,13 @@
 #pragma once
 
 #define PLAYER_ATTACK_COOLDOWN 1
-#define PLAYER_SIZE sf::Vector2f(100.0f, 100.0f)
+#define PLAYER_SIZE sf::Vector2f(56.0f, 224.0f)
 #define N_PROJECTILES 10
 #define PLAYER_ACCELERATION_X 800
 #define PLAYER_BREAK_COEFFICIENT 5
 #define PLAYER_MAX_VELOCITY sf::Vector2f(500.0f, 500.0f)
+
+#define PLAYER_TEXTURE_PATH "../assets/player.png"
 
 #define STR_ATTACK_TIMER "attackTimer"
 

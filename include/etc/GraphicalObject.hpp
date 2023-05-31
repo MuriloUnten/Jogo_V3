@@ -15,6 +15,7 @@ public:
     ~GraphicalObject();
 
     virtual void draw();
+    void changeTexture(std::string path);
     void setOrigin(sf::Vector2f size);
     void setPosition(sf::Vector2f position);
     void setPosition(float x, float y);

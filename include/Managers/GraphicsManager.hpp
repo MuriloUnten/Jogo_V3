@@ -12,6 +12,7 @@ namespace Managers
 	{
 	private:
 		sf::RenderWindow* window;
+        std::map<std::string, sf::Texture*> textures;
 
 		/* Singleton Design pattern */
 		static GraphicsManager* instance;
@@ -33,6 +34,7 @@ namespace Managers
         void draw(sf::Sprite& body);
         void draw(sf::RectangleShape& body);
 		sf::RenderWindow* getWindow();
+        sf::Texture* loadTexture(std::string path);
 
 		void updateDeltaTime();
 		static const float getDeltaTime();

@@ -13,6 +13,8 @@ namespace Entities
         controls->setKeys("W", "A", "D", "Space");
 
         graphicalRepresentation = new GraphicalObject(position, PLAYER_SIZE);
+        graphicalRepresentation->changeTexture(PLAYER_TEXTURE_PATH);
+
         setPosition(position);
         maxVelocity = PLAYER_MAX_VELOCITY;
 
