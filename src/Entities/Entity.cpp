@@ -42,11 +42,19 @@ namespace Entities {
 
     void Entity::move(float dt)
     {
-
+        handleMovementLogic();
+        updateVelocity(dt);
+        updatePosition(dt);
     }
 
 
     void Entity::updateTimers(float dt)
+    {
+
+    }
+
+
+    void Entity::handleMovementLogic()
     {
 
     }

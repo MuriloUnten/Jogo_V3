@@ -42,3 +42,9 @@ void GraphicalObject::setPosition(float x, float y)
 {
     sprite.setPosition(x, y);
 }
+
+
+void GraphicalObject::setScale(float x, float y)
+{
+    sprite.setScale(x, y);
+}

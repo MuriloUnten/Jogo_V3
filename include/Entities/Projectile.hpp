@@ -14,5 +14,6 @@ namespace Entities
         virtual ~Projectile();
 
         virtual void shoot() = 0;
+        void handleMovementLogic();
     };
 }//namespace Entities

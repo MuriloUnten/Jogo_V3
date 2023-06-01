@@ -36,7 +36,7 @@ namespace Entities
         Player();
         ~Player();
 
-        void move(float dt);
+        void handleMovementLogic();
 
         void jump();
         void attack();

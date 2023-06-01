@@ -21,7 +21,6 @@ namespace Entities
         PlayerProjectile(Player* player=nullptr);
         ~PlayerProjectile();
 
-        void move(float dt);
         void shoot();
     };
 }

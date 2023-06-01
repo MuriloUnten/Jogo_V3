@@ -38,12 +38,16 @@ namespace Entities
     }
 
 
-    void Player::move(float dt)
+    void Player::handleMovementLogic()
     {
         controls->executePressedKeys();
-        updateVelocity(dt);
-        updatePosition(dt);
+
+        if(facingRight)
+            graphicalRepresentation->setScale(1.0f, 1.0f);
+        else
+            graphicalRepresentation->setScale(-1.0f, 1.0f);
     }
+
 
     void Player::jump()
     {

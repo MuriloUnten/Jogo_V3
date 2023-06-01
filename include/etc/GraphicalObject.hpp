@@ -19,4 +19,5 @@ public:
     void setOrigin(sf::Vector2f size);
     void setPosition(sf::Vector2f position);
     void setPosition(float x, float y);
+    void setScale(float x, float y);
 };

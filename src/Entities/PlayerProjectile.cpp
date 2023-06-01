@@ -20,11 +20,6 @@ namespace Entities
     }
 
     
-    void PlayerProjectile::move(float dt)
-    {
-        updatePosition(dt);
-    }
-
 
     void PlayerProjectile::shoot()
     {

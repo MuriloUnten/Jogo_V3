@@ -30,6 +30,7 @@ namespace Entities
         void execute(); // template method
         virtual void move(float dt);
         virtual void updateTimers(float dt); // hook
+        virtual void handleMovementLogic();
 
         const ID::EntityID getID() const;
 

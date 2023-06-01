@@ -16,4 +16,12 @@ namespace Entities
     {
 
     }
+
+    void Projectile::handleMovementLogic()
+    {
+        if(facingRight)
+            graphicalRepresentation->setScale(1.0f, 1.0f);
+        else
+            graphicalRepresentation->setScale(-1.0f, 1.0f);
+}
 }// namespace Entities
