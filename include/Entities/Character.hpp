@@ -25,6 +25,8 @@ namespace Entities
         Character(sf::Vector2f position=sf::Vector2f(0.0f, 0.0f));
         virtual ~Character();
 
+        virtual void handleCollision(Entity* otherEntity, sf::Vector2f intersection, bool collisionAxis);
+
         void updateTimers(float dt);
 
         void setFacingRight(const bool facingRight);

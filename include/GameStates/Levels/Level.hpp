@@ -3,6 +3,7 @@
 #include "../GameState.hpp"
 #include "../../etc/EntityList.hpp"
 #include "../../etc/GraphicalObject.hpp"
+#include "../../Managers/CollisionManager.hpp"
 
 namespace GameStates
 {
@@ -11,6 +12,7 @@ namespace GameStates
     protected:
         EntityList entities;
         GraphicalObject* graphicalRepresentation;
+        Managers::CollisionManager* collisions;
 
     public:
         Level();

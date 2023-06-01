@@ -20,6 +20,12 @@ namespace Entities
 
     }
 
+
+    void Character::handleCollision(Entity* otherEntity, sf::Vector2f intersection, bool collisionAxis)
+    {
+
+    }
+
     void Character::updateTimers(float dt)
     {
         timers.updateTimers(dt);

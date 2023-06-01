@@ -4,8 +4,10 @@
 namespace GameStates
 {
     Level::Level():
-    GameState()
+    GameState(),
+    collisions(new Managers::CollisionManager())
     {
+        collisions->setList(entities.getList());
         id = level;
 
         {// Temporary. TODO Remove 
@@ -23,7 +25,7 @@ namespace GameStates
 
     Level::~Level()
     {
-
+        delete collisions;
     }
 
 
@@ -36,6 +38,7 @@ namespace GameStates
     void Level::execute()
     {
         entities.execute();
+        collisions->execute();
         draw();
     }
 

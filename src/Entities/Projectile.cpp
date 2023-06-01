@@ -23,5 +23,11 @@ namespace Entities
             graphicalRepresentation->setScale(1.0f, 1.0f);
         else
             graphicalRepresentation->setScale(-1.0f, 1.0f);
-}
+    }
+
+
+    void Projectile::handleCollision(Entity* otherEntity, sf::Vector2f intersection, bool collisionAxis)
+    {
+
+    }
 }// namespace Entities

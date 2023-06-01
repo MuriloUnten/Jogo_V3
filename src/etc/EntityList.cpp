@@ -41,3 +41,9 @@ void EntityList::pushEntity(Entities::Entity* entity)
 {
     list.push_back(entity);
 }
+
+
+std::list<Entities::Entity*>* EntityList::getList()
+{
+    return &list;
+}

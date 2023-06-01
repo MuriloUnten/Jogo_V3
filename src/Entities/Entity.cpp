@@ -110,6 +110,12 @@ namespace Entities {
     }
 
 
+    const sf::Vector2f Entity::getSize() const
+    {
+        return size;
+    }
+
+
     void Entity::updatePosition(float dt)
     {
         setPosition(position + velocity * dt);

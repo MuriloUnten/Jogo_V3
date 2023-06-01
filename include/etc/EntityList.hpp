@@ -16,4 +16,5 @@ public:
     void execute();
 
     void pushEntity(Entities::Entity* entity);
+    std::list<Entities::Entity*>* getList();
 };
