@@ -4,6 +4,8 @@
 #include "../ID/EntityID.hpp"
 #include "../etc/GraphicalObject.hpp"
 
+#define GRAVITY 2000
+
 namespace Entities
 {
     class Entity

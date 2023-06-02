@@ -5,6 +5,7 @@ namespace Entities
     Projectile::Projectile():
     Entity()
     {
+        id = ID::EntityID::projectile;
         executable = false;
         acceleration = sf::Vector2f(0.0f, 0.0f);
         velocity = sf::Vector2f(0.0f, 0.0f);

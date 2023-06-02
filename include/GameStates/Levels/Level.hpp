@@ -4,6 +4,8 @@
 #include "../../etc/EntityList.hpp"
 #include "../../etc/GraphicalObject.hpp"
 #include "../../Managers/CollisionManager.hpp"
+#include "../../../include/Entities/Player.hpp"
+#include "../../../include/Entities/Obstacle.hpp"
 
 namespace GameStates
 {

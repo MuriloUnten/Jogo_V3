@@ -79,9 +79,9 @@ namespace Managers
         sf::Vector2f intersectionBeforeMoving = centersDistance - minimumDistance;
 
         if(intersectionBeforeMoving.x < 0.0f && intersectionBeforeMoving.y > 0.0f)
-            return COLLISION_IN_X;
-        if(intersectionBeforeMoving.x > 0.0f && intersectionBeforeMoving.y < 0.0f)
             return COLLISION_IN_Y;
+        if(intersectionBeforeMoving.x > 0.0f && intersectionBeforeMoving.y < 0.0f)
+            return COLLISION_IN_X;
 
         if(intersection.x > intersection.y)
             return COLLISION_IN_X;

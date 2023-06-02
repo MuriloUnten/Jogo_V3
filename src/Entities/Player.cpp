@@ -10,12 +10,14 @@ namespace Entities
     score(0),
     currentProjectile(0)
     {
+        id = ID::EntityID::player;
         controls->setKeys("W", "A", "D", "Space");
 
         graphicalRepresentation = new GraphicalObject(position, PLAYER_SIZE);
         graphicalRepresentation->changeTexture(PLAYER_TEXTURE_PATH);
 
         setPosition(position);
+        size = PLAYER_SIZE;
         maxVelocity = PLAYER_MAX_VELOCITY;
 
         timers.createTimer(STR_ATTACK_TIMER, PLAYER_ATTACK_COOLDOWN);
@@ -53,7 +55,7 @@ namespace Entities
     {
         if(canJump)
         {
-            velocity.y = -600;
+            velocity.y = PLAYER_JUMP_SPEED;
             jumping = true;
             canJump = false;
         }

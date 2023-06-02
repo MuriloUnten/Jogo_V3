@@ -5,6 +5,8 @@ namespace ID
     enum EntityID
     {
         player,
+        obstacle,
+        projectile,
     
     };
 

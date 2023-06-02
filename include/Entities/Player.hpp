@@ -5,7 +5,8 @@
 #define N_PROJECTILES 10
 #define PLAYER_ACCELERATION_X 2000
 #define PLAYER_BREAK_COEFFICIENT 10
-#define PLAYER_MAX_VELOCITY sf::Vector2f(600.0f, 500.0f)
+#define PLAYER_MAX_VELOCITY sf::Vector2f(600.0f, 2000.0f)
+#define PLAYER_JUMP_SPEED -1000
 
 #define PLAYER_TEXTURE_PATH "../assets/player.png"
 

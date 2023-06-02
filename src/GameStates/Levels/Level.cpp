@@ -1,5 +1,4 @@
 #include "../../../include/GameStates/Levels/Level.hpp"
-#include "../../../include/Entities/Player.hpp"
 
 namespace GameStates
 {
@@ -18,6 +17,20 @@ namespace GameStates
             for(int i = 0; i < N_PROJECTILES; i++)
             {
                 entities.pushEntity(projectiles->operator[](i));
+            }
+
+            for(int i = 0; i < WIDTH; i += 50)
+            {
+                Entities::Obstacle* obstacle = new Entities::Obstacle(sf::Vector2f(i, HEIGHT - 25.0f));
+                entities.pushEntity(obstacle);
+            }
+            Entities::Obstacle* obstacle = new Entities::Obstacle(sf::Vector2f(600.0f, 650.0f));
+            entities.pushEntity(obstacle);
+            
+            for(int i = 0; i < HEIGHT; i += 50)
+            {
+                Entities::Obstacle* obstacle = new Entities::Obstacle(sf::Vector2f(25.0f, i));
+                entities.pushEntity(obstacle);
             }
         }
     }

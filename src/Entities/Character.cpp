@@ -9,7 +9,7 @@ namespace Entities
     timers(),
     facingRight(true)
     {
-        canJump = false;
+        canJump = true;
         attacking = false;
         walking = false;
     }
@@ -23,6 +23,31 @@ namespace Entities
 
     void Character::handleCollision(Entity* otherEntity, sf::Vector2f intersection, bool collisionAxis)
     {
+        ID::EntityID ID = otherEntity->getID();
+        switch (ID)
+        {
+            case ID::EntityID::player:
+                break;
+            
+            case ID::EntityID::obstacle:
+                otherEntity->handleCollision(this, intersection, collisionAxis);
+                if(!collisionAxis)
+                {
+                    if(this->position.y < otherEntity->getPosition().y)
+                    {
+                        jumping = false;
+                        canJump = true;
+                    }
+                    velocity.y = 0.0f;
+                }
+                else
+                    velocity.x = 0.0f;
+                break;
+
+            case ID::EntityID::projectile:
+                break;
+
+        }
 
     }
 
