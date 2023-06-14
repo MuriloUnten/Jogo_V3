@@ -2,13 +2,12 @@
 
 namespace Entities
 {
-Obstacle::Obstacle(sf::Vector2f position):
-    Entity(position)
+Obstacle::Obstacle(sf::Vector2f position, sf::Vector2f size):
+    Entity(position, OBSTACLE_SIZE)
 {
     id = ID::EntityID::obstacle;
     size = OBSTACLE_SIZE;
-    graphicalRepresentation = new GraphicalObject(position, OBSTACLE_SIZE);
-    graphicalRepresentation->changeTexture(OBSTACLE_TEXTURE_PATH);
+    graphicalRepresentation.changeTexture(OBSTACLE_TEXTURE_PATH);
     setPosition(position);
 }
 

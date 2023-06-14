@@ -4,19 +4,21 @@
 namespace Entities {
     Managers::GraphicsManager* Entity::graphics = Managers::GraphicsManager::getInstance();
 
-    Entity::Entity(sf::Vector2f position):
+    Entity::Entity(sf::Vector2f position, sf::Vector2f size):
+        graphicalRepresentation(position, size),
+        size(size),
         velocity(0.0f, 0.0f),
         maxVelocity(0.0f, 0.0f),
         acceleration(0.0f , GRAVITY),
         executable(true)
     {
-    
+
     }
 
     
     Entity::~Entity()
     {
-        delete graphicalRepresentation;
+        
     }
 
 
@@ -25,7 +27,7 @@ namespace Entities {
         if(!executable)
             return;
     
-        graphicalRepresentation->draw();
+        graphicalRepresentation.draw();
     }
 
 
@@ -37,6 +39,8 @@ namespace Entities {
         float dt = graphics->getDeltaTime();
         updateTimers(dt);
         move(dt);
+        
+        handleGraphicsLogic();
     }
 
 
@@ -60,6 +64,12 @@ namespace Entities {
     }
 
 
+    void Entity::handleGraphicsLogic()
+    {
+
+    }
+
+
     const ID::EntityID Entity::getID() const
     {
         return id;
@@ -69,7 +79,7 @@ namespace Entities {
     void Entity::setPosition(sf::Vector2f newPosition)
     {
         position = newPosition;
-        graphicalRepresentation->setPosition(position);
+        graphicalRepresentation.setPosition(position);
     }
 
 
@@ -77,7 +87,7 @@ namespace Entities {
     {
         position.x = x;
         position.y = y;
-        graphicalRepresentation->setPosition(x, y);
+        graphicalRepresentation.setPosition(x, y);
     }
     
     const sf::Vector2f Entity::getPosition() const

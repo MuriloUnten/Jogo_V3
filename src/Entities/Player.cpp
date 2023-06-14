@@ -4,17 +4,14 @@
 namespace Entities
 {
     Player::Player(sf::Vector2f position):
-    Character(position),
+    Character(position, PLAYER_SIZE),
     controls(new PlayerControl(this)),
     projectiles(new std::array<PlayerProjectile*, N_PROJECTILES>),
-    score(0),
-    currentProjectile(0)
+    currentProjectile(0),
+    score(0)
     {
         id = ID::EntityID::player;
         controls->setKeys("W", "A", "D", "Space");
-
-        graphicalRepresentation = new GraphicalObject(position, PLAYER_SIZE);
-        graphicalRepresentation->changeTexture(PLAYER_TEXTURE_PATH);
 
         setPosition(position);
         size = PLAYER_SIZE;
@@ -26,6 +23,9 @@ namespace Entities
         {
             projectiles->operator[](i) = new PlayerProjectile(this);
         }
+        
+        animation.addAnimation("idle", "../assets/gunner/gunner_idle.png", sf::Vector2f(1.0f, 1.0f), sf::Vector2f(0.0f, 0.0f), 5, 0.7f);
+        animation.changeAnimation("idle");
     }
 
 
@@ -44,10 +44,10 @@ namespace Entities
     {
         controls->executePressedKeys();
 
-        if(facingRight)
-            graphicalRepresentation->setScale(1.0f, 1.0f);
-        else
-            graphicalRepresentation->setScale(-1.0f, 1.0f);
+        // if(facingRight)
+        //     graphicalRepresentation.setScale(1.0f, 1.0f);
+        // else
+        //     graphicalRepresentation.setScale(-1.0f, 1.0f);
     }
 
 

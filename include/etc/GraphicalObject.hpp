@@ -5,7 +5,7 @@
 
 class GraphicalObject
 {
-private:
+protected:
     static Managers::GraphicsManager* graphics;
 
     sf::Sprite sprite;
@@ -20,4 +20,6 @@ public:
     void setPosition(sf::Vector2f position);
     void setPosition(float x, float y);
     void setScale(float x, float y);
+    void setTexture(sf::Texture& texture);
+    void setTextureRect(const sf::IntRect& rect);
 };

@@ -2,6 +2,7 @@
 
 #include "Entity.hpp"
 #include "../etc/TimerMap.hpp"
+#include "../etc/CharacterGraphics.hpp"
 
 namespace Entities
 {
@@ -9,6 +10,7 @@ namespace Entities
     {
         
     protected:
+        CharacterGraphics animation;
         TimerMap timers;
     
         int hp;
@@ -22,8 +24,10 @@ namespace Entities
         bool movingInX;
 
     public:
-        Character(sf::Vector2f position=sf::Vector2f(0.0f, 0.0f));
+        Character(sf::Vector2f position=sf::Vector2f(0.0f, 0.0f), sf::Vector2f size=sf::Vector2f(0.0f, 0.0f));
         virtual ~Character();
+
+        void handleGraphicsLogic();
 
         virtual void handleCollision(Entity* otherEntity, sf::Vector2f intersection, bool collisionAxis);
 

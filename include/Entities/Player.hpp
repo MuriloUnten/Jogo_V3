@@ -1,7 +1,7 @@
 #pragma once
 
 #define PLAYER_ATTACK_COOLDOWN 0.5f
-#define PLAYER_SIZE sf::Vector2f(56.0f, 224.0f)
+#define PLAYER_SIZE sf::Vector2f(192.0f, 192.0f)
 #define N_PROJECTILES 10
 #define PLAYER_ACCELERATION_X 2000
 #define PLAYER_BREAK_COEFFICIENT 10

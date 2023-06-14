@@ -13,7 +13,7 @@ namespace Entities
     protected:
         static Managers::GraphicsManager* graphics;
 
-        GraphicalObject* graphicalRepresentation;
+        GraphicalObject graphicalRepresentation;
         ID::EntityID id;
 
         sf::Vector2f position;
@@ -26,7 +26,7 @@ namespace Entities
         bool executable;
 
     public:
-        Entity(sf::Vector2f position=sf::Vector2f(0.0f, 0.0f));
+        Entity(sf::Vector2f position=sf::Vector2f(0.0f, 0.0f), sf::Vector2f size=sf::Vector2f(0.0f, 0.0f));
         virtual ~Entity();
 
         void draw();
@@ -34,6 +34,7 @@ namespace Entities
         virtual void move(float dt);
         virtual void updateTimers(float dt); // hook
         virtual void handleMovementLogic();
+        virtual void handleGraphicsLogic();
 
         virtual void handleCollision(Entity* otherEntity, sf::Vector2f intersection, bool collisionAxis) = 0;
 

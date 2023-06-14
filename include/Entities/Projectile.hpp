@@ -10,7 +10,7 @@ namespace Entities
         bool facingRight;
     
     public:
-        Projectile();
+        Projectile(sf::Vector2f position=sf::Vector2f(0.0f, 0.0f), sf::Vector2f size=sf::Vector2f(0.0f, 0.0f));
         virtual ~Projectile();
 
         virtual void shoot() = 0;

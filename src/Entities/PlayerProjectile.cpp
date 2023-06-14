@@ -4,11 +4,10 @@
 namespace Entities
 {
     PlayerProjectile::PlayerProjectile(Player* player):
-    Projectile(),
+    Projectile(sf::Vector2f(0.0f, 0.0f), PLAYER_PROJECTILE_SIZE),
     player(player)
     {
-        graphicalRepresentation = new GraphicalObject(sf::Vector2f(0.0f, 0.0f), PLAYER_PROJECTILE_SIZE);
-        graphicalRepresentation->changeTexture(PLAYER_PROJECTILE_TEXTURE_PATH);
+        graphicalRepresentation.changeTexture(PLAYER_PROJECTILE_TEXTURE_PATH);
 
         maxVelocity.x = PLAYER_PROJECTILE_VELOCITY;
     }

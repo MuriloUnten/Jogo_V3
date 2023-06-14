@@ -4,8 +4,9 @@
 
 namespace Entities
 {
-    Character::Character(sf::Vector2f position):
-    Entity(position),
+    Character::Character(sf::Vector2f position, sf::Vector2f size):
+    Entity(position, size),
+    animation(&graphicalRepresentation),
     timers(),
     facingRight(true)
     {
@@ -49,6 +50,12 @@ namespace Entities
 
         }
 
+    }
+
+
+    void Character::handleGraphicsLogic()
+    {
+        animation.executeAnimation(facingRight);
     }
 
     void Character::updateTimers(float dt)

@@ -48,3 +48,16 @@ void GraphicalObject::setScale(float x, float y)
 {
     sprite.setScale(x, y);
 }
+
+
+
+void GraphicalObject::setTexture(sf::Texture& texture)
+{
+    sprite.setTexture(texture);
+}
+
+
+void GraphicalObject::setTextureRect(const sf::IntRect& rect)
+{
+    sprite.setTextureRect(rect);
+}

@@ -90,16 +90,6 @@ namespace Managers
 
     sf::Texture* GraphicsManager::loadTexture(std::string path)
     {
-    //     sf::Texture* texture = textures[path];
-    //     
-    //     if(texture)
-    //         return texture;
-
-    //     texture = new sf::Texture();
-    //     texture->loadFromFile(path);
-    //     textures[path] = texture;
-
-    //     return texture;
         sf::Texture* texture;
         try
         {
@@ -111,7 +101,8 @@ namespace Managers
             texture->loadFromFile(path);
             textures.insert(std::pair<std::string, sf::Texture*>(path, texture));
         }
-    return texture;
+
+        return texture;
     }
 
 

@@ -2,14 +2,13 @@
 
 namespace Entities
 {
-    Projectile::Projectile():
-    Entity()
+    Projectile::Projectile(sf::Vector2f position, sf::Vector2f size):
+    Entity(position, size)
     {
         id = ID::EntityID::projectile;
         executable = false;
         acceleration = sf::Vector2f(0.0f, 0.0f);
         velocity = sf::Vector2f(0.0f, 0.0f);
-        position = sf::Vector2f(0.0f, 0.0f);
     }
 
 
@@ -21,9 +20,9 @@ namespace Entities
     void Projectile::handleMovementLogic()
     {
         if(facingRight)
-            graphicalRepresentation->setScale(1.0f, 1.0f);
+            graphicalRepresentation.setScale(1.0f, 1.0f);
         else
-            graphicalRepresentation->setScale(-1.0f, 1.0f);
+            graphicalRepresentation.setScale(-1.0f, 1.0f);
     }
 
 
