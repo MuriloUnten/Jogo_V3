@@ -5,7 +5,7 @@ Managers::GraphicsManager* Animation::graphics = Managers::GraphicsManager::getI
 Animation::Animation(std::string filePath, sf::Vector2f scale, sf::Vector2f offset, const unsigned int numberOfFrames, float frameTime):
     scale(scale),
     offset(offset),
-    imageSection(0, 0, 0, 0),
+    imageSection(offset.x, offset.y, 0, 0),
     numberOfFrames(numberOfFrames),
     frameTime(frameTime),
     elapsedTime(0.0f),
@@ -14,8 +14,8 @@ Animation::Animation(std::string filePath, sf::Vector2f scale, sf::Vector2f offs
     texture = graphics->loadTexture(filePath);
 
     // TODO Fix the section logic.
-    imageSection.width = (int) (texture->getSize().x / numberOfFrames);
-    imageSection.height = (int) texture->getSize().y;
+    imageSection.width = (int) (texture->getSize().x / numberOfFrames) - 2 * offset.x;
+    imageSection.height = (int) texture->getSize().y - 2 * offset.y;
 }
 
 
@@ -52,7 +52,7 @@ void Animation::executeAnimation(const bool facingRight)
 void Animation::resetAnimation()
 {
     currentFrame = 0;
-    imageSection.left = 0;
+    imageSection.left = offset.x;
     elapsedTime = 0.0f;
 }
 

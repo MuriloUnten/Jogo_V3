@@ -24,7 +24,7 @@ namespace Entities
             projectiles->operator[](i) = new PlayerProjectile(this);
         }
         
-        animation.addAnimation("idle", "../assets/gunner/gunner_idle.png", sf::Vector2f(1.0f, 1.0f), sf::Vector2f(0.0f, 0.0f), 5, 0.7f);
+        animation.addAnimation("idle", "../assets/gunner/gunner_idle.png", sf::Vector2f(1.0f, 1.0f), sf::Vector2f(27.0f, 47.0f), 5, 0.7f);
         animation.changeAnimation("idle");
     }
 
